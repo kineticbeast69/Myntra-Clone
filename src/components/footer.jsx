@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer className="p-2 bg-light border border-info">
+      <footer>
         <div className="footer_container bg-warning">
           <div className="footer_column">
             <h3>ONLINE SHOPPING</h3>
@@ -39,9 +39,9 @@ function Footer() {
             <a href="#">Myntra Insider</a>
           </div>
         </div>
-        <hr />
+        <hr className="m-0" />
 
-        <div className="copyright">
+        <div className="copyright text-center text-secondary border-bottom border-dark">
           © 2023 www.myntra.com. All rights reserved.
         </div>
       </footer>

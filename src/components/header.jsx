@@ -8,13 +8,13 @@ function Header() {
     <>
       <header>
         <div className="logo_container">
-          <a href="/">
+          <Link to="/">
             <img
               className="myntra_home"
               src="images/myntra_logo.webp"
               alt="Myntra Home"
             />
-          </a>
+          </Link>
         </div>
         <nav className="nav_bar">
           <a href="#">Men</a>
@@ -27,15 +27,13 @@ function Header() {
           </a>
         </nav>
         <div className="search_bar">
-          <span className="material-symbols-outlined search_icon">
-            <label htmlFor="search-bar">
-              <FaSearch size={24} />
-            </label>
-          </span>
+          <label htmlFor="search-bar" className="m-2">
+            <FaSearch size={24} />
+          </label>
           <input
             className="search_input"
             placeholder="Search for products, brands and more"
-            id="search-box"
+            id="search-bar"
           />
         </div>
         <div className="action_bar">
@@ -53,13 +51,13 @@ function Header() {
             <span className="action_name">Wishlist</span>
           </div>
 
-          <a className="action_container" href="/bag">
+          <Link to="/bag" className="action_container">
             <span>
               <LuBaggageClaim />
             </span>
             <span className="action_name">Bag</span>
             <span className="bag-item-count">0</span>
-          </a>
+          </Link>
         </div>
       </header>
     </>

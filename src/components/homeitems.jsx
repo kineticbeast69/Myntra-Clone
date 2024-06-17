@@ -1,4 +1,4 @@
-function Homeitems({ item }) {
+function HomeItems({ item }) {
   return (
     <>
       <div className="item-container">
@@ -21,4 +21,4 @@ function Homeitems({ item }) {
   );
 }
 
-export default Homeitems;
+export default HomeItems;
