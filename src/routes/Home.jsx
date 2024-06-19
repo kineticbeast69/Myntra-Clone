@@ -1,16 +1,18 @@
 import HomeItems from "../components/homeitems";
-import { useSelector, useDispatch } from "react-redux";
-function Home() {
-  const UIitems = useSelector((store) => store.items);
-  console.log(UIitems);
+import { useSelector } from "react-redux";
+
+const Home = () => {
+  const items = useSelector((store) => store.items);
+
   return (
     <main>
       <div className="items-container">
-        {UIitems.map((item) => (
-          <HomeItems key={item.id} item={item}></HomeItems>
+        {items.map((item) => (
+          <HomeItems key={item.id} item={item} />
         ))}
       </div>
     </main>
   );
-}
+};
+
 export default Home;

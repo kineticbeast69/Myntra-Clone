@@ -1,22 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./routes/App.jsx";
-import Bag from "./components/bag.jsx";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Errorpage from "./components/errorPage.jsx";
-import { Provider } from "react-redux";
+import Bag from "./routes/bag.jsx";
 import Home from "./routes/Home.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { store } from "./redux/store.js";
+import { Provider } from "react-redux";
+import myntraStore from "./redux/store.js";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
+      { path: "/", element: <Home /> },
       {
         path: "/bag",
         element: <Bag />,
@@ -25,10 +24,9 @@ const router = createBrowserRouter([
     errorElement: <Errorpage />,
   },
 ]);
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={myntraStore}>
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>

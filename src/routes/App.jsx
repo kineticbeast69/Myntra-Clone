@@ -1,15 +1,19 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Outlet } from "react-router-dom";
-// components section
-import Header from "../components/header";
 import Footer from "../components/footer";
+import Header from "../components/header";
+import FetchItems from "../components/fetchingItems";
+import { useSelector } from "react-redux";
+import LoadingSpinner from "../components/loadingSpinner";
 
 function App() {
+  const fetchStatus = useSelector((store) => store.fetchStatus);
+
   return (
     <>
-      <Header></Header>
-      <Outlet />
-      <Footer></Footer>
+      <Header />
+      <FetchItems />
+      {fetchStatus.currentlyFetching ? <LoadingSpinner /> : <Outlet />}
+      <Footer />
     </>
   );
 }
